@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://arte/graficos/Tiles/tileset-kenneyt.tres" type="TileSet" id=1]
+[ext_resource path="res://arte/graficos/Tiles/tile_0024.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
 
 [node name="Node2D" type="Node2D"]
 
@@ -12,3 +15,13 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 65537, 0, 0, 65538, 0, 0, 131075, 0,
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 778.951, 304.077 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2( 778.951, 304 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource( 1 )
+
+[node name="tile_0024" type="Sprite" parent="RigidBody2D"]
+position = Vector2( 0.267639, -1.59488 )
+texture = ExtResource( 2 )
